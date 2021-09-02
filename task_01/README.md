@@ -4,4 +4,6 @@
 ## 1.09.2021
 * I studied the [directory tree in Linux](https://stepik.org/course/762/syllabus), how work with files and their contents
 ## 2.09.2021
-* 
+* I started studying [Ansible](https://www.ansible.com/), what it is, what it is used for
+## 3.09.2021
+*
