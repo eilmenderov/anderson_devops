@@ -6,4 +6,6 @@
 ## 2.09.2021
 * I started studying [Ansible](https://www.ansible.com/), what it is, what it is used for
 ## 3.09.2021
-*
+* I learned how to create and run simple applications using the Flask framework
+## 4.09.2021
+* 
