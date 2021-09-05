@@ -8,13 +8,13 @@ For the true enterprise grade system we will need Python3, Flask and emoji suppo
 * the service should receive “JSON object and return strings in the following manner:
 
 ```sh
-curl -XPOST -d '{"animal":"cow", "sound": "moooo", "count": 3}' http://myvm.localhost/
+curl -XPOST -d'{"animal":"cow", "sound":"moooo", "count": 3}' http://myvm.localhost/
 cow says moooo
 cow says moooo
 cow says moooo
 Made with by %your_name
 
-curl -XPOST -d '{"animal":"elephant", "sound": "whoooaaa", "count": 5}' http://myvm.localhost/
+curl -XPOST -d'{"animal":"elephant", "sound":"whoooaaa", "count": 5}' http://myvm.localhost/
 elephant says whoooaaa
 elephant says whoooaaa
 elephant says whoooaaa
