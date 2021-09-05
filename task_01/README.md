@@ -10,4 +10,6 @@
 ## 4.09.2021
 * I studied control operators in terminal, environment variables, embedding of command shells
 ## 5.09.2021
+* I lerned how to process requests in the flask and respond to them
+## 6.09.2021
 * 
