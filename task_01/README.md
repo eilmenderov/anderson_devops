@@ -8,4 +8,6 @@
 ## 3.09.2021
 * I learned how to create and run simple applications using the Flask framework
 ## 4.09.2021
+* I studied control operators in terminal, environment variables, embedding of command shells
+## 5.09.2021
 * 
