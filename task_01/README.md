@@ -12,4 +12,6 @@
 ## 5.09.2021
 * I lerned how to process requests in the flask and respond to them
 ## 6.09.2021
+* I found out what features Ansible has, and analyzed simple examples of its use for configuration
+## 7.09.2021
 * 
