@@ -16,4 +16,4 @@
 ## 7.09.2021
 * I learned how to install debian 10.10 on a VM and create an crypted LVM volume ![VM_lsblk](./lsblk_b2br.png)
 ## 8.09.2021
-*
+* Understood how pipes work in the terminal, how they work together with redirects
