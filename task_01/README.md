@@ -17,3 +17,9 @@
 * I learned how to install debian 10.10 on a VM and create an crypted LVM volume ![VM_lsblk](./lsblk_b2br.png)
 ## 8.09.2021
 * Understood how pipes work in the terminal, how they work together with redirects
+## 10.09.2021
+* I studied the shell script writing language
+## 11.09.2021
+* what is ssh and how to connect to a VM with ssh
+## 12.09.2021
+* 
