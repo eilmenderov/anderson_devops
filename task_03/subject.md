@@ -15,8 +15,15 @@ sudo netstat -tunapl | awk '/firefox/ {print$5}' | cut -d: -f1 | sort | tail -n5
 * bonus - the script can work with 'ss', you use /built-ins utilities, not included in base script
 ### Commands description:
 ```
-sudo netstat -tunapl |
-awk '/firefox/ {print$5}' |
+sudo 
+netstat -tunapl | - отображает различную network–related информацию
+	-l - все открытые порты (LISTEN)
+	-t - по протоколу TCP
+	-u - по протоколу UDP
+	-n - без резолва IP/имён
+	-a - cписок всех портов (как прослушиваемых, так и нет)
+	-p - какой порт занимает определённая программа
+awk '/firefox/ {print$5}' | - инструмент для обработки и фильтрации текста
 cut -d: -f1 |
 sort |
 tail -n5 |
