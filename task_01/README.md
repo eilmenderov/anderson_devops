@@ -18,8 +18,10 @@
 ## 8.09.2021
 * Understood how pipes work in the terminal, how they work together with redirects
 ## 10.09.2021
-* I studied the shell script writing language
+* I studied the shell [script](https://habr.com/ru/company/ruvds/blog/325522/) writing language
 ## 11.09.2021
-* what is ssh and how to connect to a VM with ssh
-## 12.09.2021
+* What is ssh and how to connect to a VM with ssh
+## 13.09.2021
+* I learned several new features of git
+## 14.09.2021
 * 
