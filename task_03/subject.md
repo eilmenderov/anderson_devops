@@ -16,18 +16,18 @@ sudo netstat -tunapl | awk '/firefox/ {print$5}' | cut -d: -f1 | sort | tail -n5
 ### Commands description:
 ```
 sudo 
-netstat -tunapl | - отображает различную network–related информацию
-	-l - все открытые порты (LISTEN)
-	-t - по протоколу TCP
-	-u - по протоколу UDP
-	-n - без резолва IP/имён
-	-a - cписок всех портов (как прослушиваемых, так и нет)
-	-p - какой порт занимает определённая программа
-awk '/firefox/ {print$5}' | - инструмент для обработки и фильтрации текста
-cut -d: -f1 |
-sort |
-tail -n5 |
-grep -oP '(\d+\.){3}\d+' |
-while read IP ; do whois $IP |
-awk -F':''/^Organization/{print $2}'; done
+netstat -tunapl 							| - displays different network-related information
+	-l - all open ports (LISTEN)
+	-t - over the TCP protocol
+	-u - over the UDP protocol
+	-n - without IP/name resolution
+	-a - list of all ports (both listened and not)
+	-p - which port is occupied by a certain program
+awk '/firefox/ {print$5}' 					| - a tool for processing and filtering text
+cut -d: -f1 								| - allows you to cut out part of the text
+sort 										| - sort
+tail -n5 									| - allows you to output a specified number of lines from the end of the file
+grep -oP '(\d+\.){3}\d+' 					| - gives users the ability to search for a string
+while read IP ; do whois $IP 				| - it will tell you a lot of information about who owns an Internet domain
+awk -F':''/Organization/{print $2}'; done 	| - a tool for processing and filtering text
 ```

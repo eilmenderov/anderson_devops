@@ -5,13 +5,8 @@ fi
 
 IFS=$'\0'
 
-VAR1=$(netstat -tunapl)
-VAR2=$(echo $VAR1 | awk "/$1/ {print\$5}")
-VAR3=$(echo $VAR2 | cut -d: -f1)
-VAR4=$(echo $VAR3 | sort)
-VAR5=$(echo $VAR4 | tail -n5)
-VAR6=$(echo $VAR5 | grep -oP '(\d+\.){3}\d+')
-VAR7=$(echo $VAR6 | 
+VAR1=$(netstat -tunapl | awk "/$1/ {print\$5}" | cut -d: -f1 | sort | tail -n5 | grep -oP '(\d+\.){3}\d+')
+REZ=$(echo $VAR1 | 
 	while read IP
-	do whois $IP | awk -F ':' "/Organization/ {print\$2}"; done)
-echo $VAR7
+	do whois $IP | awk -F ':' "/^Organization/ {print\$2}"; done)
+echo $REZ
