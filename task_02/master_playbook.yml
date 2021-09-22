@@ -1,0 +1,6 @@
+- name: create_service
+  hosts: local
+  become: yes
+  gather_facts: yes
+  roles:
+        - create_service

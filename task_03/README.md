@@ -1,4 +1,4 @@
-# Shell script
+# Shell script(Not finished yet)
 By the name/PID of the process, the script gets a list of organizations with whose IP addresses it is connected. You can read full subtect [here](./subject.md).
 
 ## Hou to use

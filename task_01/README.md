@@ -24,4 +24,8 @@
 ## 13.09.2021
 * I learned several new features of git
 ## 14.09.2021
+* I lerned how work with git in a team
+## 15.09.2021
+* I've learned a few new features of Docker
+## 16.09.2021
 * 
