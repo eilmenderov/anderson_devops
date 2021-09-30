@@ -1,5 +1,4 @@
-## Task
-### Deadline - October 1, 2021
+## Task tg_bot
 Write a functioning telegram bot in GO with at least 3 commands:
 * Git returns the address of your repository
 * Tasks returns a numbered list of your completed tasks

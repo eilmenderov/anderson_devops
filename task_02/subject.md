@@ -1,5 +1,4 @@
 # Ansible assignment 
-## Deadline - September 22, 2021
 ## Create and deploy your own service 
 ### The development stage: 
 For the true enterprise grade system we will need Python3, Flask and emoji support. Why on Earth would we create stuff that does not support emoji?!
@@ -52,10 +51,10 @@ Made with by %your_name
 	* ✅ the service should receive JSON object
 * ✅ create a test_VM(Debian 10)
 * ✅ use Ansible to deploys the service to the test_VM with playbook
-* use Ansible to set up a test_VM with playbook:
+* ✅ use Ansible to set up a test_VM with playbook:
 	* allow connections only to the ports 22, 80, 443
 	* configure systemd so that the application starts after reboot
 	* disable root login
-	* disable all authentication methods except "public keys"
+	* ✅ disable all authentication methods except "public keys"
 	* bonus points for SSL/HTTPS support with self-signed certificates
 	* bonus points for using ansible vault
