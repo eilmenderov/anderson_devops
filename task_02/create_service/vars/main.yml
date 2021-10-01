@@ -3,6 +3,7 @@
     pakages:
             - tree
             - htop
+            - net-tools
     work_user: vleida
     pub_ssh_srcs: authorized_keys
     file_srcs: service

@@ -1,2 +1,2 @@
 [local]
-test_vm ansible_host=127.0.0.1 ansible_ssh_private_key_file=./create_service/files/rsa_prv ansible_user=root ansible_port=4242 ansible_sudo_pass="12345"
+test_vm ansible_host=127.0.0.1 ansible_ssh_private_key_file=./create_service/files/rsa_prv ansible_user=root ansible_port=4242 ansible_sudo_pass=12345

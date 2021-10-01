@@ -14,6 +14,6 @@ COPY ./requirements.txt /var/www/requirements.txt
 
 WORKDIR /src 
 
-EXPOSE 80 443
+EXPOSE 8080
 
 ENTRYPOINT ["python", "/src/app.py"]

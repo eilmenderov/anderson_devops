@@ -6,7 +6,7 @@
 # How to use:
 * in bash
 ```
-cd service && docker build -t service . && docker run -it -p 443:443 -p 80:80 --rm service && docker rmi service
+cd service && docker build -t service . && docker run -it --rm service && docker rmi service
 ```
 * in another window
 ```
