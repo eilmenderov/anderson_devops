@@ -11,7 +11,7 @@ import (
 )
 
 const (
-	TG_TOKEN = "TOKEN_FROM_BOT_FATHER"
+	TG_TOKEN = "TOCKEN_FROM_BOT_FATHER"
 	GIT_TREE = "https://github.com/Avchar/anderson_devops/tree/master/task_XX"
 	GIT_REPO = "https://github.com/Avchar/anderson_devops.git"
 	FIND_TASKS = "tus-ok"
