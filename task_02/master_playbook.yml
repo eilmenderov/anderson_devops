@@ -1,7 +1,0 @@
-- name: create_service
-  hosts: local
-  become: yes
-#   remote_user: vleida
-  gather_facts: yes
-  roles:
-        - create_service

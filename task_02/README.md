@@ -1,14 +1,22 @@
 # SERVICE
-### Status KO
+### Status OK
 ### Deadline - September 22, 2021
 ## subject [here](./subject.md)
 
 # How to use:
-* in bash
+* create VM (need VirtualBox and Vagrant on your PC):
 ```
-cd service && docker build -t service . && docker run -it --rm service && docker rmi service
+vagrant up
 ```
-* in another window
+* configurate VM:
 ```
-curl -XPOST -d'{"animal":"cow", "sound":"moooo", "count": 3}' http://localhost/
+ansible-playbook -i hosts.ini playbook.yml
+```
+* edit the hosts file (if necessary):
+```
+sudo echo 192.168.50.5 myvm.localhost >> /etc/hosts
+```
+* in terminal try:
+```
+curl -XPOST -d'{"animal":"cow", "sound":"moooo", "count": 3}' http://myvm.localhost/
 ```

@@ -1,0 +1,11 @@
+---
+# vars file for create_service
+    pakages:
+            - tree
+            - htop
+            - net-tools
+            - iptables
+    work_user: vleida
+    file_srcs: service
+    file_dest: "/home/{{work_user}}/"
+...

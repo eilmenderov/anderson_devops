@@ -1,0 +1,51 @@
+---
+# update vm
+  - name: update_vm
+    apt:
+      update_cache: yes
+      force_apt_get: yes
+
+# upgrade vm
+  - name: upgrade_vm
+    apt:
+      upgrade: yes
+
+# create new group for user
+  - name: create_new_group
+    group:
+      name: "{{ work_user }}"
+      state: present
+
+# create new user
+  - name: create_new_user
+    user:
+      name: "{{ work_user }}"
+      shell: /bin/bash
+      append: yes
+      home: "/home/{{ work_user }}"
+
+# copy file from server to client
+  - name: copy_service
+    copy:
+      src: "{{ file_srcs }}"
+      dest: "{{ file_dest }}"
+      owner: "{{ work_user }}"
+      group: "{{ work_user }}"
+      mode: "0644"
+
+# install programms
+  - name: instal_progs
+    apt:
+      pkg: "{{ pakages }}"
+      state: present
+
+  - name: default settings iptable
+    ansible.builtin.shell: |
+      iptables -A INPUT --dport 80 -j ACCEPT
+      iptables -A OUTPUT --dport 80 -j ACCEPT
+      iptables -A INPUT --dport 22 -j ACCEPT
+      iptables -A OUTPUT --dport 22 -j ACCEPT
+      iptables -A INPUT --dport 443 -j ACCEPT
+      iptables -A OUTPUT --dport 443 -j ACCEPT
+      exit 0
+...

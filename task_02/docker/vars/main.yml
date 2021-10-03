@@ -1,14 +1,5 @@
 ---
 # vars file for create_service
-    pakages:
-            - tree
-            - htop
-            - net-tools
-    work_user: vleida
-    pub_ssh_srcs: authorized_keys
-    file_srcs: service
-    file_dest: "/home/{{work_user}}/"
-
     CTOP_VERSION: "0.7.3"
     DOCKER_COMPOSE_VERSION: "1.25.1"
     DOCKER_PACKAGES:
@@ -18,3 +9,4 @@
                     - gnupg-agent
                     - software-properties-common
     USER: "vleida"
+...

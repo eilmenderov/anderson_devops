@@ -1,0 +1,18 @@
+---
+- name: "Start container after reboot"
+  ansible.builtin.cron:
+    name: "a job for reboot"
+    special_time: reboot
+    job: "/home/vleida/service/start.sh"
+
+- name: "Disable Root Login"
+  lineinfile:
+    dest: /etc/ssh/sshd_config
+    regexp: '^PermitRootLogin'
+    line: "PermitRootLogin no"
+    state: present
+    backup: yes
+  become: yes
+  notify:
+    - restart ssh
+...

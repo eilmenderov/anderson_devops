@@ -1,0 +1,8 @@
+---
+- hosts: "vm_vagrant"
+  become: true
+  roles:
+  - user
+  - docker
+  - last_set
+...
