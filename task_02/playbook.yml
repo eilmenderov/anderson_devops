@@ -5,4 +5,8 @@
   - user
   - docker
   - last_set
+  - iptables
+  tasks:
+  - name: Unconditionally reboot the machine with all defaults
+    reboot:
 ...
