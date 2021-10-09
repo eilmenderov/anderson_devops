@@ -1,5 +1,5 @@
 # Shell script
-### Status OK
+### Status KO
 ### Deadline - September 14, 2021
 ## subject [here](./subject.md)
 By the name/PID of the process, the script gets a list of organizations with whose IP addresses it is connected.
