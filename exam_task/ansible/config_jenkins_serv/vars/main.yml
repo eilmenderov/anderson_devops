@@ -1,0 +1,6 @@
+---
+# vars file for create_service
+    pakages:
+            - openjdk-8-jre
+            - ca-certificates
+...

@@ -1,0 +1,86 @@
+---
+# install docker
+  - name: Update apt packages
+    apt:
+      update_cache: "yes"
+      force_apt_get: "yes"
+
+  - name: Install packages needed for Docker
+    apt:
+      name: "{{ DOCKER_PACKAGES }}"
+      state: present
+      force_apt_get: "yes"
+
+  - name: Add Docker GPG apt Key
+    apt_key:
+      url: https://download.docker.com/linux/debian/gpg
+      state: present
+
+  - name: "Save the current debian release version into a variable"
+    shell: lsb_release -cs
+    register: debian_version
+
+  - name: Add Docker Repository
+    apt_repository:
+      repo: "deb [arch=amd64] https://download.docker.com/linux/debian {{ debian_version.stdout }} stable"
+      state: present
+
+  - name: Update apt packages
+    apt:
+      update_cache: "yes"
+      force_apt_get: "yes"
+
+  - name: Install Docker
+    apt:
+      name: "docker-ce"
+      state: present
+      force_apt_get: "yes"
+
+  - name: Create docker group
+    group:
+      name: "docker"
+      state: present
+
+  - name: Adding user {{ USER }} to docker group
+    user:
+      name: "{{ USER }}"
+      groups: "docker"
+      append: "yes"
+
+  - name: Install Docker Compose
+    get_url:
+      url: https://github.com/docker/compose/releases/download/{{ DOCKER_COMPOSE_VERSION }}/docker-compose-Linux-x86_64
+      dest: "/usr/local/bin/docker-compose"
+      mode: 0755
+
+  - name: Install Ctop
+    get_url:
+      url: https://github.com/bcicen/ctop/releases/download/v{{ CTOP_VERSION }}/ctop-{{ CTOP_VERSION }}-linux-amd64
+      dest: "/usr/local/bin/ctop"
+      mode: 0755
+
+  - name: Recursively change ownership of a directory
+    ansible.builtin.file:
+      path: /home/admin/WORKDIR/jenkins
+      state: directory
+      recurse: yes
+      owner: admin
+      group: admin
+      mode: "0755"
+
+  - name: copy_public_key
+    copy:
+      src: "/Users/avchar/.ssh/jenkins_to_app.pub"
+      dest: "/home/admin/sshdir/"
+      owner: "admin"
+      group: "admin"
+      mode: "0600"
+
+  - name: add public_key
+    ansible.builtin.shell: |
+      sudo cat /home/admin/sshdir/jenkins_to_app.pub >> /home/admin/.ssh/authorized_keys
+      exit 0
+
+  - name: Unconditionally reboot the machine with all defaults
+    reboot:
+...

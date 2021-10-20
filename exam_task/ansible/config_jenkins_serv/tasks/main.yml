@@ -1,0 +1,60 @@
+---
+# update vm
+  - name: update_vm
+    apt:
+      update_cache: yes
+      force_apt_get: yes
+
+# upgrade vm
+  - name: upgrade_vm
+    apt:
+      upgrade: yes
+
+# install programms
+  - name: instal_progs
+    apt:
+      pkg: "{{ pakages }}"
+      state: present
+
+  - name: befor_install_jenkins
+    ansible.builtin.shell: |
+      sude wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | sudo apt-key add -
+      sudo sh -c 'echo deb https://pkg.jenkins.io/debian binary/ > /etc/apt/sources.list.d/jenkins.list'
+      exit 0
+
+  - name: add jenkins key
+    apt_key:
+      state: present
+      url: "https://pkg.jenkins.io/debian-stable/jenkins.io.key"
+
+# update vm
+  - name: update_vm
+    apt:
+      update_cache: yes
+      force_apt_get: yes
+
+  - name: "Install Jenkins"
+    apt:
+      name: "jenkins" 
+      state: present
+
+  - name: "Starting jenkins"
+    service:
+      name: "jenkins"
+      state: started
+      enabled: yes
+
+  - name: create sshdir
+    ansible.builtin.shell: |
+      cd /home/ubuntu
+      mkdir sshdir
+      exit 0
+
+  - name: copy_privet_key
+    copy:
+      src: "/Users/avchar/.ssh/jenkins_to_app"
+      dest: "/home/ubuntu/sshdir"
+      owner: "ubuntu"
+      group: "ubuntu"
+      mode: "0600"
+...

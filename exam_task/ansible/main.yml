@@ -1,0 +1,11 @@
+---
+- hosts: "jenkins"
+  become: true
+  roles:
+  - config_jenkins_serv
+
+- hosts: "app_serv"
+  become: true
+  roles:
+  - config_go_and_python
+...
