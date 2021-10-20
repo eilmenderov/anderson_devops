@@ -32,4 +32,6 @@ COPY --from=builder /goApp/main /goApp/main
 
 USER appuser:appuser
 
+EXPOSE 80 443
+
 CMD ["/goApp/main"]
