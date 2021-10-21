@@ -9,7 +9,7 @@
 * [Python app](http://ec2-3-15-230-0.us-east-2.compute.amazonaws.com/)
 
 ## Apps repository
-[python_app_repo](https://github.com/Avchar/python_app_hw) and [go_app_repo](https://github.com/Avchar/go_app_hw) 
+[python_app_repo](https://github.com/Avchar/python_app_hw) and [go_app_repo](https://github.com/Avchar/go_app_hw)
 
 ## Description
 I completed this task in a few steps:
