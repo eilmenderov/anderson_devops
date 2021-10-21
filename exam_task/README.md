@@ -1,7 +1,7 @@
 # Final Task
 ### Status OK
 ### Deadline - October 21, 2021
-## subject [here](./subject.md)
+## subject [here](./subject.pdf)
 
 ## Public DNS adress:
 * [Jenkins](http://ec2-3-142-93-28.us-east-2.compute.amazonaws.com:8080/)
