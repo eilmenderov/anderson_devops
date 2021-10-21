@@ -7,8 +7,8 @@ provider "aws" {
 # }
 
 resource "aws_key_pair" "deployer" {
-  key_name		= "deployer-key"
-  public_key	= file("/Users/YOUR_USER/.ssh/id_rsa.pub")
+	key_name	= "deployer-key"
+	public_key	= file("/Users/avchar/.ssh/id_rsa.pub")
 }
 
 resource "aws_instance" "ubuntu_18_jenkins_serv" {
@@ -20,7 +20,7 @@ resource "aws_instance" "ubuntu_18_jenkins_serv" {
 	
 	tags = {
 		Name	= "jenkins_serv"
-		Owner	= "OWNER_NAME"
+		Owner	= "Ilmenderov Evgeniy"
 		Project	= "final_task"
 	}
 
@@ -65,7 +65,7 @@ resource "aws_instance" "debian_go" {
 
 	tags = {
 		Name	= "debian_go_serv"
-		Owner	= "OWNER_NAME"
+		Owner	= "Ilmenderov Evgeniy"
 		Project	= "final_task"
 	}
 }
@@ -84,7 +84,7 @@ resource "aws_instance" "debian_python" {
 
 	tags = {
 		Name	= "debian_python_serv"
-		Owner	= "OWNER_NAME"
+		Owner	= "Ilmenderov Evgeniy"
 		Project	= "final_task"
 	}
 }
@@ -93,6 +93,24 @@ output "debian_python_public_dns" {
 	value = aws_instance.debian_python.public_dns
 }
 
+
+resource "aws_instance" "debian_test" {
+	ami						= "ami-089fe97bc00bff7cc"
+	instance_type			= "t2.micro"
+	vpc_security_group_ids	= [aws_security_group.app_serv.id]
+	key_name				= aws_key_pair.deployer.id
+	# count					= 0
+
+	tags = {
+		Name	= "debian_test"
+		Owner	= "Ilmenderov Evgeniy"
+		Project	= "final_task"
+	}
+}
+
+output "debian_test_dns" {
+	value = aws_instance.debian_test.public_dns
+}
 
 resource "aws_security_group" "app_serv" {
 	name		= "app_serv security group"
