@@ -1,4 +1,4 @@
-## A script that returns the most active contributor
+## A script that returns the most active contributor ✅ 
 ### Status OK
 ### Deadline - October 8, 2021
 ### subject [here](./subject.md)

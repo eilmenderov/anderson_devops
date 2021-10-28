@@ -1,4 +1,4 @@
-# **Today I lerned(TIL):**
+# **Today I lerned(TIL):** ✅ 
 ### Status OK
 ## 31.08.2021
 * learned basic knowledge about [markdown](https://guides.hexlet.io/markdown/), [HTML](https://ru.code-basics.com/languages/html) and [CSS](https://ru.code-basics.com/languages/css)
